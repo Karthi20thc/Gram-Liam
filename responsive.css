@@ -1,0 +1,293 @@
+/* @media (max-width: 1200px) {
+  .section-hero {
+    background-color: orangered;
+  }
+}
+@media (max-width: 600px) {
+  .section-hero {
+    border: 12px solid blue;
+    background-color: royalblue; conflicting css rule, this will override with background-color line-3
+  }
+} */
+
+/* rem and em dont depend on html font-size 1rem =1em = 16px   rem -root font size and em- current font size */
+
+/* BELOW 1344PX (SMALLER DESKTOPS) */
+/* 1344/16 = 84em */
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+  .heading-primary {
+    font-size: 4.2rem;
+  }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1200px LANDSCAPE TABLETS */
+@media (max-width: 75em) {
+  /* .section-how,
+  .section-meals,
+  .section-testimonials,
+  .container-pricing,
+  .container-cta,
+  .container-footer {
+    max-width: 110rem;
+  } */
+  html {
+    font-size: 52.5%; /*9px/16px =0.5625 =  52.5% */
+  }
+  .secondary-heading,
+  .secondary-head {
+    font-size: 3.4rem;
+  }
+  .heading-Tertiary {
+    font-size: 1.8rem;
+  }
+}
+
+/* 1024 px  LANDSCAPE TABLETS*/
+@media (max-width: 64.5em) {
+  .section-how,
+  .section-meals,
+  .section-testimonials,
+  .container-pricing,
+  .container-cta,
+  .container-footer {
+    max-width: 100rem;
+  }
+}
+
+/* 932px  POTRAIT TABLET*/
+@media (max-width: 58.25em) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .hero-text-box,
+  .customer {
+    text-align: center;
+  }
+  .customer {
+    justify-content: center;
+  }
+
+  .hero-img-box {
+    justify-content: center;
+  }
+  .hero-img-box img {
+    width: 50%;
+    border-radius: 2%;
+  }
+  .main-nav-list {
+    column-gap: 1rem;
+  }
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .testimonial-box {
+    margin-bottom: 2rem;
+  }
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .cta {
+    grid-template-columns: 2fr 1fr;
+  }
+  .cta-form {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .btn-mobile-nav {
+    display: block;
+  }
+  /* mobile navigation */
+  .main-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 0.5px solid; */
+
+    transition: all 0.5s;
+    /* by default */
+    /* display: none;  cant animate*/
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    transform: translateX(100%);
+  }
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+
+    transform: translateX(0%);
+  }
+  .main-nav-list {
+    width: 100%;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+
+    /* border: 0.5px solid; */
+  }
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+    /* display: block;
+    background-color: orangered; */
+  }
+}
+
+/* 846px */
+@media (max-width: 53em) {
+  html {
+    font-size: 50%;
+  }
+  .section-how,
+  .section-meals,
+  .section-testimonials,
+  .container-pricing,
+  .container-cta,
+  .container-footer {
+    max-width: 85rem;
+  }
+  .pricing-plan {
+    width: 100%;
+  }
+  .section-cta {
+    padding: 8rem 0;
+  }
+  .main-nav-list {
+    column-gap: 1rem;
+  }
+}
+
+/* 674px smaller tablets */
+@media (max-width: 44em) {
+  .section-how,
+  .section-meals,
+  .section-testimonials,
+  .container-pricing,
+  .container-cta,
+  .container-footer {
+    max-width: 75rem;
+  }
+  .grid--3--col,
+  .grid--4--col {
+    grid-template-columns: 1fr 1fr;
+  }
+  .diet {
+    grid-column: 1/-1;
+    justify-self: center;
+    /* justify self is to be applied only on grid item */
+  }
+  /* we have one grid empty, so create grid of 6 columns and make each grid span acrocss 2 columns */
+  /* .grid--5--col {
+    grid-template-columns: 1fr 1fr 1fr;
+  } */
+  .grid--5--col {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  /* we want all the nav-col to be in 1st row */
+  .nav-col {
+    grid-row: 1;
+    grid-column: span 2;
+  }
+  .address-col,
+  .logo-col {
+    grid-column: span 3;
+  }
+}
+
+/* below 544px phones */
+@media (max-width: 33.25em) {
+  .section-how,
+  .section-meals,
+  .section-testimonials,
+  .container-pricing,
+  .container-cta,
+  .container-footer {
+    max-width: 55rem;
+  }
+  .grid--2--col,
+  .grid--3--col,
+  .grid--4--col {
+    grid-template-columns: 1fr;
+  }
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .secondary-heading {
+    font-size: 4.4rem;
+  }
+  .pricing-plan {
+    width: 100%;
+  }
+  .section-featured,
+  .section-how {
+    padding: 3rem 0;
+  }
+
+  /* first image then text */
+  .step-img-box {
+    grid-row: 1;
+  }
+  .step-description {
+    margin-bottom: 2.8rem;
+  }
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+  .cta {
+    grid-template-columns: 1fr;
+  }
+  .cta-img-box {
+    height: 36rem;
+    grid-row: 1;
+  }
+}
+/* 434px */
+@media (max-width: 29.9375em) {
+  .section-how,
+  .section-meals,
+  .section-testimonials,
+  .container-pricing,
+  .container-cta,
+  .container-footer {
+    max-width: 45rem;
+    /* border: 0.5px solid; */
+  }
+}
+
+@media (max-width: 23.4375em) {
+  .section-how,
+  .section-meals,
+  .section-testimonials,
+  .container-pricing,
+  .container-cta,
+  .container-footer {
+    max-width: 38rem;
+  }
+  .sub-Heading {
+    /* background-color: yellow; */
+  }
+} ;
